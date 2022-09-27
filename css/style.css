@@ -1,0 +1,414 @@
+/* Fontes / Fonts  */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Source+Sans+Pro:wght@900&display=swap');
+
+/* Variáveis/ Vars */
+
+:root {
+
+  --bg-color: #241943;
+
+  --status-color: #08A32D;
+
+  --bg-buttons-color: #5E558E;
+
+  --bg-vex: #C10841;
+
+  --bg-vex-ripple: #FF2B6C;
+
+  --bg-user: #182E5F;
+
+  --bg-user-ripple: #0F3995;
+
+  --bg-input-color: #5E558E;
+
+}
+
+/************/
+
+body, html {
+
+  width: 100%;
+
+  height: 100%;
+
+  
+
+  scroll-behavior: smooth;
+
+}
+
+ * {
+
+   margin: 0;
+
+   padding: 0;
+
+   box-sizing: border-box;
+
+   font-family: 'Montserrat', sans-serif;
+
+ }
+
+ 
+
+ #toolbar {
+
+  width: 90%;
+
+  height: min-content;
+
+  background: #FFFFFF;
+
+  border-radius: 10px;
+
+  position: sticky;
+
+  overflow: hidden;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  flex-grow: 0;
+
+  padding: 2vw;
+
+  top:10px;
+
+  margin-left: 2vw;
+
+  margin-right: 2vw;
+
+ }
+
+#content {
+
+  background: var(--bg-color);
+
+  width: 100vw;
+
+  height: auto;
+
+  min-height: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: start;
+
+  align-items: center;
+
+}
+
+img.image {
+
+  width: 10vw;
+
+  height: 10vw;
+
+  border-radius: 10px;
+
+  background: #99205C;
+
+  padding: 1vw;
+
+}
+
+span.status {
+
+  border-radius: 360px;
+
+  width: 5vw;
+
+  height: 5vw;
+
+  background: var(--status-color);
+
+  margin-right: 8px;
+
+}
+
+p#name {
+
+  font-size: 6vw;
+
+  font-family: 'Source Sans Pro', sans-serif;
+
+}
+
+#buttons {
+
+  background: var(--bg-buttons-color);
+
+  height: min-content;
+
+  width: 92%;
+
+  border-radius: 10px;
+
+  bottom: 0px;
+
+  display: flex;
+
+  justify-content: start;
+
+  align-items: center;
+
+  flex-grow: 0;
+
+  padding: 2vw;
+
+  column-gap: 4vw;
+
+  margin-left: 2vw;
+
+  margin-right: 2vw;
+
+}
+
+ul#msg_content {
+
+  display: flex;
+
+  flex: 3;
+
+  width: 96%;
+
+  height: auto;
+
+  inset: 1px;
+
+  /*
+
+  background: #337031;
+
+  */
+
+  flex-direction: column;
+
+  margin-top: 1rem;
+
+  margin-bottom: 1vh;
+
+  inset: 0;
+
+  transition: all 0.5s;
+
+}
+
+img.icon {
+
+  background: white;
+
+  height: 9vw;
+
+  width: 9vw;
+
+  padding: 4px;
+
+  border-radius: 10px;
+
+  
+
+}
+
+div.input {
+
+  background: white;
+
+  display: flex;
+
+  justify-content: space-around;
+
+  align-items: stretch;
+
+  flex: 2;
+
+  padding: 3px;
+
+  border-radius: 10px;
+
+  z-index: 1;
+
+}
+
+div#button_content {
+
+  display: flex;
+
+  flex-direction: column;
+
+  bottom: 1vh;
+
+  position: sticky;
+
+  justify-content: center;
+
+  align-items: center;
+
+  z-index: 1;
+
+}
+
+div#type {
+
+  background: var(--bg-input-color);
+
+  width: 91.9%;
+
+  height: auto;
+
+  margin-left: 2vw;
+
+  margin-right: 2vw;
+
+  top: 0;
+
+  border-radius: 10px 10px 0 0;
+
+  padding: 1.5vw;
+
+  color: white;
+
+  font-size: 4vw;
+
+  padding-bottom: 2vh;
+
+  visibility: hidden;
+
+  transform: translateY(1vh);
+
+  z-index: -1;
+
+}
+
+input {
+
+  flex: 4;
+
+  width: 90%;
+
+  outline-style: none;
+
+  border-style: none;
+
+  inset: 1px;
+
+  color: black;
+
+  text-align: center;
+
+  font-size: 5vw;
+
+  padding: 0;
+
+}
+
+input::placeholder{
+
+  color:black;
+
+}
+
+li.msg {
+
+  text-align: center;
+
+  width: fit-content;
+
+  word-wrap: break-word;
+
+  max-width: 70vw;
+
+  display: flex;
+
+  flex-direction: column;
+
+  border-radius: 5vw;
+
+  height: fit-content;
+
+  padding: 4vw;
+
+  margin: 8px;
+
+  color: white;
+
+  justify-content: center;
+
+  font-size: 4vw;
+
+  row-gap: 2vw;
+
+  padding-bottom: 3vw;
+
+  border: 0.3vw solid #FFFFFF;
+
+  transition: all .2s;
+
+  animation: scale .3s linear;
+
+  background-position: center;
+
+  transition: background 0.6s;
+
+}
+
+li.msg.vex {
+
+  background: var(--bg-vex);
+
+  text-align: right;
+
+  align-self: flex-start;
+
+}
+
+li.msg.user{
+
+  background: var(--bg-user);
+
+   text-align: left;
+
+   align-self: flex-end;
+
+}
+
+li.msg.user:hover {
+
+  background: var(--bg-user-ripple);
+
+}
+
+li.msg.vex:hover {
+
+    background: var(--bg-vex-ripple)
+
+  }
+
+  
+
+span.data {
+
+  font-size: 3vw;
+
+}
+
+.show {
+
+  animation: typingOn .4s forwards !important;
+
+  
+
+}
+
+.hide {
+
+  animation: typingOff .4s forwards !important;
+
+}
+
