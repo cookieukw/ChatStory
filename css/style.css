@@ -232,7 +232,7 @@ span.data {
   }
 
   p#name {
-    font-size: 1rem;
+    font-size: 4vh;
   }
 
   img.image {
@@ -267,8 +267,8 @@ span.data {
 
   img.icon {
     background: white;
-    height: 2rem;
-    width: 2rem;
+    height: 4vw;
+    width: 4vw;
     padding: 1%;
     border-radius: 10px;
   }
