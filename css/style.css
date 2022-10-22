@@ -287,13 +287,19 @@ span.data {
   height: fit-content;
   padding: 0.9rem;
   margin: 8px;
-  font-size: 1rem;
-  padding-bottom: 1rem;
+  font-size: 4vh;
+  padding-bottom: 1vh;
 
 }
 
 span.data {
-  font-size: 1rem;
+  font-size: 4vh;
+}
+
+ul#msg_content {
+  width: min-content;
+  min-width: 40%;
+  margin: auto;
 }
 }
 
