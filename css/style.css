@@ -1,7 +1,7 @@
-/* Fontes/ Fonts  */
+/* Fontes  */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Source+Sans+Pro:wght@900&display=swap');
 
-/* Variáveis / Vars */
+/* Variáveis */
 :root {
   --bg-color: #241943;
   --status-color: #08A32D;
@@ -12,24 +12,22 @@
   --bg-user-ripple: #0F3995;
   --bg-input-color: #5E558E;
 }
-
 /************/
-body,
-html {
+body, html {
   width: 100%;
   height: 100%;
-
+  
   scroll-behavior: smooth;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
-}
-
-#toolbar {
+ * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Montserrat', sans-serif;
+ }
+ 
+ #toolbar {
   width: 90%;
   height: min-content;
   background: #FFFFFF;
@@ -41,15 +39,15 @@ html {
   align-items: center;
   flex-grow: 0;
   padding: 2vw;
-  top: 10px;
+  top:10px;
   margin-left: 2vw;
   margin-right: 2vw;
-}
+ }
 
 #content {
   background: var(--bg-color);
   width: 100vw;
-  height: min-content;
+  height: auto;
   min-height: 100%;
   display: flex;
   flex-direction: column;
@@ -117,6 +115,7 @@ img.icon {
   width: 9vw;
   padding: 4px;
   border-radius: 10px;
+  
 }
 
 div.input {
@@ -157,7 +156,7 @@ div#type {
   z-index: -1;
 }
 
-input[type="text"]#text {
+input {
   flex: 4;
   width: 90%;
   outline-style: none;
@@ -168,9 +167,8 @@ input[type="text"]#text {
   font-size: 5vw;
   padding: 0;
 }
-
-input[type="text"]#text::placeholder {
-  color: black;
+input::placeholder{
+  color:black;
 }
 
 li.msg {
@@ -198,12 +196,14 @@ li.msg {
 
 li.msg.vex {
   background: var(--bg-vex);
+  text-align: right;
   align-self: flex-start;
 }
 
-li.msg.user {
+li.msg.user{
   background: var(--bg-user);
-  align-self: flex-end;
+   text-align: left;
+   align-self: flex-end;
 }
 
 li.msg.user:hover {
@@ -211,21 +211,20 @@ li.msg.user:hover {
 }
 
 li.msg.vex:hover {
-  background: var(--bg-vex-ripple)
-}
-
+    background: var(--bg-vex-ripple)
+  }
+  
 span.data {
   font-size: 3vw;
 }
 
 .show {
   animation: typingOn .4s forwards !important;
+  
 }
-
 .hide {
   animation: typingOff .4s forwards !important;
 }
-
 @media (min-width:500px) {
   #toolbar {
     width: 40%;
@@ -233,13 +232,13 @@ span.data {
   }
 
   p#name {
-    font-size: 23px;
+    font-size: 1rem;
   }
 
   img.image {
     width: 5vw;
     height: 5vw;
-    border-radius: 30px;
+    border-radius: 10px;
     padding: 1vw;
   }
 
@@ -249,8 +248,9 @@ span.data {
   }
 
   div#buttons {
-    font-size: 1rem !important ;
-    width: 50%;
+    font-size: 1rem;
+    width: min-content;
+    min-width: 90%;
     border-radius: 15px;
     bottom: 0px;
     padding: 2vw;
@@ -258,19 +258,42 @@ span.data {
     margin-left: 2rem;
     margin-right: 2rem;
   }
+
   div.input {
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
   img.icon {
-  background: white;
-  height: 2.7rem;
-  width: 2.7rem;
-  padding: 1%;
+    background: white;
+    height: 2rem;
+    width: 2rem;
+    padding: 1%;
+    border-radius: 10px;
+  }
+
+  input[type="text"]#text {
+    font-size: 1rem;
+  }
+  li.msg {
+  text-align: center;
+  width: fit-content;
+  word-wrap: break-word;
+  max-width: 70vw;
+  display: flex;
+  flex-direction: column;
   border-radius: 15px;
+  height: fit-content;
+  padding: 0.9rem;
+  margin: 8px;
+  font-size: 1rem;
+  padding-bottom: 1rem;
+
 }
-input[type="text"]#text {
-  font-size: 1.7rem;
+
+span.data {
+  font-size: 1rem;
 }
 }
+
