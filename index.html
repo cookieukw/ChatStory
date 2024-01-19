@@ -1,82 +1,48 @@
 <!DOCTYPE html>
-
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ChatStory</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+  </head>
 
-<head>
+  <body>
+    <div id="content">
+      <div id="toolbar">
+        <img
+          class="image"
+          src="https://github.com/cookieukw/Vex-Reactions/blob/main/reactions/vex_angry.png?raw=true"
+        />
+        <p id="name">Vex</p>
+        <span class="status"></span>
+      </div>
 
-  <meta charset="UTF-8">
+      <ul id="msg_content"></ul>
 
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+      <div id="button_content">
+        <div id="type">Vex is typing</div>
+        <div id="buttons">
+          <img
+            src="https://akveo.github.io/eva-icons/fill/png/128/plus-circle.png"
+            class="icon"
+          />
+          <div class="input">
+            <input type="text" placeholder="Type here..." id="text" />
+            <img src="send_icon.svg" class="icon" />
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>ChatStory</title>
-
-  <link rel="stylesheet" href="css/style.css">
-
-  <link rel="stylesheet" href="css/animations.css">
-
-</head>
-
-<body>
-
-<div id="content">
-
-  
-
-<div id="toolbar">
-
-  <img class="image" src="https://github.com/cookieukw/Vex-Reactions/blob/main/reactions/vex_angry.png?raw=true">
-
-  <p id="name">Vex</p>
-
-  <span class="status"></span>
-
-</div>
-
-<ul id="msg_content">
-
-  
-
-</ul>
-
-<div id="button_content">
-
-  <div id="type">
-
-    Vex is typing 
-
-  </div>
-
-  <div id="buttons">
-
-<img src="https://akveo.github.io/eva-icons/fill/png/128/plus-circle.png" class="icon">
-
-<div class="input">
-
-  <input type="text" placeholder="Type here..." id="text">
-
-  <img
-
-  src="send_icon.svg"
-
-  class="icon">
-
-</div>
-
-  </div>
-
-</div>
-
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-  <script src="js/main.js"></script>
-
- 
-
-</body>
-
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+      integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>
-

@@ -1,168 +1,62 @@
-const l = l => console.log(l)
+const list = document.getElementById("msg_content");
+const typeElement = document.getElementById("type");
 
-const list = document.getElementById("msg_content")
+let typeBool = true;
 
-const typeElement = document.getElementById("type")
-
-let typeBool = true
-
-const allMsg =
-
-[
-
-  {
-
-  id: "vex",
-
-  content: "Teste"
-
-},
-
-{
-
-  id: "vex",
-
-  content: "Teste"
-
-},
-
-{
-
-  id: "user",
-
-  content: "Teste"
-
-},
-
-{
-
-  id: "vex",
-
-  content: "Teste"
-
-},
-
-{
-
-  id: "user",
-
-  content: "Teste"
-
-},
-
-{
-
-  id: "vex",
-
-  content: "Teste"
-
-},
-
-{
-
-  id: "user",
-
-  content: "Teste"
-
-},
-
-{
-
-  id: "user",
-
-  content: "Teste"
-
-}
-
-]
+const allMsg = [
+  { id: "vex", content: "Teste" },
+  { id: "vex", content: "Teste" },
+  { id: "user", content: "Teste" },
+  { id: "vex", content: "Teste" },
+  { id: "user", content: "Teste" },
+  { id: "vex", content: "Teste" },
+  { id: "user", content: "Teste" },
+  { id: "user", content: "Teste" },
+];
 
 const msg = (id, content) => {
+  let base = document.createElement("li");
+  base.setAttribute("class", `msg ${id}`);
 
-  let base = document.createElement("li")
+  let msgText = createSpan("msg_text", content);
+  let data = createSpan("data", getHours());
 
-  base.setAttribute("class","msg "+id)
+  base.appendChild(msgText);
+  base.appendChild(data);
 
-  
+  list.append(base);
+  $(document).scrollTop($("#msg_content").height());
+};
 
-  let msg_text = create_span()
-
-  msg_text.setAttribute("class","msg_text")
-
-  msg_text.innerText= content
-
-  
-
-  let data = create_span()
-
-  data.setAttribute("class","data")
-
-  data.innerText = getHours()
-
-  
-
-  base.appendChild(msg_text)
-
-  base.appendChild(data)
-
-  list.append(base)
-
-  $(document).scrollTop($("#msg_content").height())
-
-}
-
-const create_span = ()=>{
-
-  return document.createElement("span")
-
-}
+const createSpan = (className, text) => {
+  let span = document.createElement("span");
+  span.setAttribute("class", className);
+  span.innerText = text;
+  return span;
+};
 
 (function genContent(i) {
+  setTimeout(() => {
+    let currentMsg = allMsg[i];
+    msg(currentMsg.id, currentMsg.content);
 
-  setTimeout(()=>{
+    if (i--) genContent(i);
+  }, 1500);
+})(allMsg.length - 1);
 
-    let gg = allMsg[i]
-
-    msg(gg.id, gg.content)
-
-    
-
-    if(i--) genContent(i)
-
-  }, 1500)
-
-})(allMsg.length-1)
-
-const setTyping = bool =>{
-
-  if(bool){
-
-    typeElement.style.display==""
-
-    typeElement.classList.add("show")
-
-    typeElement.classList.remove("hide")
-
+const setTyping = (bool) => {
+  if (bool) {
+    typeElement.style.display = "";
+    typeElement.classList.add("show");
+    typeElement.classList.remove("hide");
   } else {
-
-      
-
-  typeElement.classList.add("hide")
-
-  typeElement.classList.remove("show")
-
-  typeElement.style.display=="none"
-
+    typeElement.classList.add("hide");
+    typeElement.classList.remove("show");
+    typeElement.style.display = "none";
   }
+};
 
-  
-
-}
-
-const getHours = ()=> {
-
-  let date = new Date()
-
-  return `${date.getHours()}:${date.getMinutes()}`
-
-}
-
+const getHours = () => {
+  let date = new Date();
+  return `${date.getHours()}:${date.getMinutes()}`;
+};
