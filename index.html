@@ -1,48 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ChatStory</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="animations.css" />
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
   </head>
-
   <body>
-    <div id="content">
-      <div id="toolbar">
+    <main class="chat-wrapper">
+      <section class="chat-header">
         <img
-          class="image"
           src="https://github.com/cookieukw/Vex-Reactions/blob/main/reactions/vex_angry.png?raw=true"
+          alt="Vex Avatar"
+          class="avatar"
         />
-        <p id="name">Vex</p>
-        <span class="status"></span>
-      </div>
-
-      <ul id="msg_content"></ul>
-
-      <div id="button_content">
-        <div id="type">Vex is typing</div>
-        <div id="buttons">
-          <img
-            src="https://akveo.github.io/eva-icons/fill/png/128/plus-circle.png"
-            class="icon"
-          />
-          <div class="input">
-            <input type="text" placeholder="Type here..." id="text" />
-            <img src="send_icon.svg" class="icon" />
-          </div>
+        <div class="user-info">
+          <h2 class="user-name">Vex</h2>
+          <span class="status-indicator"></span>
         </div>
-      </div>
-    </div>
+      </section>
 
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
-      integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script src="js/main.js"></script>
+      <ul id="msg_content" class="chat-messages"></ul>
+
+      <div id="type" class="typing-indicator">Vex está digitando...</div>
+
+      <form class="chat-input mdl-shadow--2dp">
+
+        <input
+          type="text"
+          id="text"
+          placeholder="Digite aqui..."
+          class="mdl-textfield__input"
+        />
+        <button type="submit" class="mdl-button mdl-js-button mdl-button--icon">
+          <img src="https://cdn-icons-png.flaticon.com/512/786/786205.png" class="icon" />
+        </button>
+      </form>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="main.js"></script>
   </body>
-</html>
+  </html>
